@@ -15,3 +15,4 @@ Route::get('/', function () {
 // 	return "Hello from eclipse";
 	return view('welcome');
 });
+Route::get("video", "VideoController@index");

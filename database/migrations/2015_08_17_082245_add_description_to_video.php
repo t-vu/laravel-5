@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVideoTable extends Migration
+class AddDescriptionToVideo extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,8 @@ class CreateVideoTable extends Migration
      */
     public function up()
     {
-        Schema::create('video', function (Blueprint $table) {
-        	$table->string("name");
-        	$table->integer("category");
-            $table->increments('id');
-            $table->timestamps();
+        Schema::table('videos', function (Blueprint $table) {
+            $table->text("description");
         });
     }
 
@@ -27,6 +24,8 @@ class CreateVideoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('video');
+        Schema::table('videos', function (Blueprint $table) {
+            //
+        });
     }
 }
