@@ -15,6 +15,7 @@ Route::get('/', function () {
 // 	return "Hello from eclipse";
 	return view('welcome');
 });
-Route::get("video", "VideoController@index");
-Route::get("video/{id}", "VideoController@show");
+Route::get("videos", "VideoController@index");
 Route::get("video/create","VideoController@create");
+Route::post("video/create","VideoController@store");
+Route::get("video/{id}", "VideoController@show");

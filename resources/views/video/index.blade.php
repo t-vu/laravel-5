@@ -12,5 +12,7 @@
 	
 
 @endforeach
+<hr>
+<div><a class = "big" href="{{ url('video/create')}}">Create a new video</a></div>
 
 @stop

@@ -15,6 +15,11 @@ article> .body{
 	font-family:sans-serif;
 	color: blue;
 }
+a.big {
+	font-size : 25pt;
+	color: green;
+
+}
 </style>
 </head>
 

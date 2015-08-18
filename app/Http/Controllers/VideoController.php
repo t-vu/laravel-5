@@ -17,7 +17,7 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $videos = Video::all();
+        $videos = Video::latest()->get();
         //return $videos;
         return view("video.index", compact("videos"));
     }
@@ -40,7 +40,15 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->get("name");
+        $description = $request->get("description");
+		$view = $request->get("view");
+		$video = Video::create();
+		$video->name = $name;
+		$video->description = $description;
+		$video->view = $view;
+		$video->save();
+		return redirect("videos");
     }
 
     /**
