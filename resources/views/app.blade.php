@@ -2,7 +2,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Learning Laravel 5</title>
-
+<style type="text/css">
+article {
+	font-size : 14pt;
+	font-family: serif;
+}
+article > h2 {
+	font-size : 20pt;
+}
+article> .body{
+	font-size : 15pt;
+	font-family:sans-serif;
+	color: blue;
+}
+</style>
 </head>
 
 <body>

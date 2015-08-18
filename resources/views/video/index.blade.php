@@ -1,10 +1,14 @@
 @extends("app")
 
 @section("content")
-<ul>
+
 @foreach($videos as $video)
-	<li>{{$video->name}}</li>
+	<article>
+	<h2>{{$video->name}}</h2>
+	<div class="body" >{{$video->description}}</div>
+	</article>
+	
 
 @endforeach
-</ul>
+
 @stop
