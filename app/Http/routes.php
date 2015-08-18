@@ -16,3 +16,5 @@ Route::get('/', function () {
 	return view('welcome');
 });
 Route::get("video", "VideoController@index");
+Route::get("video/{id}", "VideoController@show");
+Route::get("video/create","VideoController@create");

@@ -29,7 +29,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        return view("video.create");
     }
 
     /**
@@ -51,7 +51,8 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        //
+        $video = Video::findorFail($id);
+		return view("video.show",compact("video"));
     }
 
     /**
