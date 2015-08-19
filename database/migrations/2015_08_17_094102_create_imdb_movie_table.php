@@ -16,7 +16,7 @@ class CreateImdbMovieTable extends Migration
      */
     public function up()
     {
-        Schema::table('imdb_movie', function (Blueprint $table) {
+        Schema::create('imdb_movie', function (Blueprint $table) {
             $table->string("title",200);
             $table->integer("year");
             $table->char("rated",10);
