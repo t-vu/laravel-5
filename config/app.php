@@ -137,6 +137,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 		Illuminate\Html\HtmlServiceProvider::class,
+    	Vinkla\Vimeo\VimeoServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -193,6 +194,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
     	'Form'		=> Illuminate\Html\FormFacade::class,
     	'Html'		=> Illuminate\Html\HtmlFacade::class,
+        'Vimeo' 	=> Vinkla\Vimeo\Facades\Vimeo::class
 
     ],
 
