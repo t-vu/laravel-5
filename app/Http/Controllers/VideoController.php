@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Video;
 use Carbon\Carbon;
+use App\Http\Requests\CreateVideoRequest;
 
 class VideoController extends Controller
 {
@@ -45,7 +46,7 @@ class VideoController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(CreateVideoRequest $request)
     {
 //         $name = $request->get("name");
 //         $description = $request->get("description");
