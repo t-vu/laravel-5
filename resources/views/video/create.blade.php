@@ -18,6 +18,11 @@
 </div>
 
 <div class="form-group">
+	{!! Form::label("published_at","Published At: ") !!} 
+	{!! Form::input("date","published_at",Carbon\Carbon::now()->format("Y-m-d"),["class" => "form-control"]) !!}
+</div>
+
+<div class="form-group">
 	{!! Form::submit("Add Video",null,["class" => "form-control"]) !!}
 </div>
 

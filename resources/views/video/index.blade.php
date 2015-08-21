@@ -12,7 +12,18 @@
 	
 
 @endforeach
+<style>
+a.big{
+	font-weight:bolder;
+	margin: 10px;
+	border-top: 20px;
+
+}
+
+</style>
 <hr>
 <div><a class = "big" href="{{ url('video/create')}}">Create a new video</a></div>
+
+<div><a class = "big" href="{{ url('video/unpublished')}}">Unpublished videos </a></div>
 
 @stop

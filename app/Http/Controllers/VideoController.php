@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Video;
+use Carbon\Carbon;
 
 class VideoController extends Controller
 {
@@ -17,9 +18,15 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $videos = Video::latest()->get();
+        $videos = Video::latest("published_at")->published()->get();
         //return $videos;
         return view("video.index", compact("videos"));
+    }
+    
+    public function unpublished(){
+    	$videos = Video::latest("published_at")->unpublished()->get();
+    	//return $videos;
+    	return view("video.index", compact("videos"));
     }
 
     /**
@@ -40,13 +47,18 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        $name = $request->get("name");
-        $description = $request->get("description");
-		$view = $request->get("view");
-		$video = Video::create();
-		$video->name = $name;
-		$video->description = $description;
-		$video->view = $view;
+//         $name = $request->get("name");
+//         $description = $request->get("description");
+// 		$view = $request->get("view");
+// 		$video = Video::create();
+// 		$video->name = $name;
+// 		$video->description = $description;
+// 		$video->view = $view;
+// 		$video->published_at = $request->get("published_at");
+// 		$video->save();
+		
+    	//$request["published_at"] = Carbon::createFromFormat("Y-m-d", $request["published_at"]);
+		$video = Video::create($request->all());
 		$video->save();
 		return redirect("videos");
     }
@@ -60,6 +72,10 @@ class VideoController extends Controller
     public function show($id)
     {
         $video = Video::findorFail($id);
+        
+     
+        dd($video->published_at);
+        
 		return view("video.show",compact("video"));
     }
 

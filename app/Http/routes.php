@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 Route::get("videos", "VideoController@index");
 Route::get("video/create","VideoController@create");
+Route::get("video/unpublished","VideoController@unpublished");
 Route::post("video/create","VideoController@store");
 Route::get("video/{id}", "VideoController@show");
 Route::get("vimeo","VimeoController@index");
