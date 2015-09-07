@@ -23,3 +23,8 @@ Route:resource("video", "VideoController");
 // Route::post("video/create","VideoController@store");
 // Route::get("video/{id}", "VideoController@show");
 Route::get("vimeo","VimeoController@index");
+
+Route::controllers([
+		"auth"=> "Auth\AuthController",
+		"password"=>"Auth\PasswordController",
+]);

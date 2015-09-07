@@ -72,13 +72,7 @@ class VideoController extends Controller {
 	 */
 	public function show($id) {
 		$video = Video::findorFail ( $id );
-		\DB::connection()->enableQueryLog();
 
-
-		 //dd($video->user->username);
-		 $query = \DB::getQueryLog ();
-		 dd($query);
-		 $lastQuery = end ( $query );
 		// dd($video->published_at);
 		
 		return view ( "video.show", compact ( "video" ) );
@@ -92,6 +86,7 @@ class VideoController extends Controller {
 	 */
 	public function edit($id) {
 		$video = Video::findorFail ( $id );
+		print_r($video->user);
 		return view ( "video.edit", compact ( "video" ) );
 	}
 	
